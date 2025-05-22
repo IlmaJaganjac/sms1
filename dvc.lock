@@ -5,21 +5,21 @@ stages:
     deps:
     - path: src/get_data.py
       hash: md5
-      md5: 99b7c86877e10dc3aa75f05d6b504739
+      md5: 46753bc31ebd44f0bada7e72e3c3a4d4
       size: 421
     outs:
     - path: smsspamcollection
       hash: md5
-      md5: 98c8e6651ea0eec3c8dc40aa13dc0760.dir
-      size: 518973
+      md5: 5a84bb806c75cbc704c9fb17e1ba8e44.dir
+      size: 604940
       nfiles: 3
   preprocess:
     cmd: python src/text_preprocessing.py
     deps:
     - path: smsspamcollection
       hash: md5
-      md5: 98c8e6651ea0eec3c8dc40aa13dc0760.dir
-      size: 518973
+      md5: 5a84bb806c75cbc704c9fb17e1ba8e44.dir
+      size: 604940
       nfiles: 3
     - path: src/text_preprocessing.py
       hash: md5
@@ -28,15 +28,15 @@ stages:
     outs:
     - path: output/preprocessed_data.joblib
       hash: md5
-      md5: a41d3fc83cc617549315fb403b3f7167
-      size: 251348
+      md5: 6f3268f3a801647b2d3c5dbbaab2ea67
+      size: 374924
   train:
     cmd: python src/text_classification.py
     deps:
     - path: output/preprocessed_data.joblib
       hash: md5
-      md5: a41d3fc83cc617549315fb403b3f7167
-      size: 251348
+      md5: 6f3268f3a801647b2d3c5dbbaab2ea67
+      size: 374924
     - path: src/text_classification.py
       hash: md5
       md5: ea5cea56efbcfb732c31873c80d5d462
@@ -48,5 +48,5 @@ stages:
     outs:
     - path: output/model.joblib
       hash: md5
-      md5: 1408cf66fdc4e7b36d2b0ff6a44e5faf
-      size: 10681
+      md5: b1f7ffc3f88040051085c88b82af09f0
+      size: 12281
